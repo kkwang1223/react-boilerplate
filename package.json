@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "webpack --config ./webpack/development.js",
     "dev": "npm run clean && webpack serve --config ./webpack/development.js",
     "prod": "npm run clean && webpack --config ./webpack/production.js",
     "test": "echo \"Error: no test specified\" && exit 1"
