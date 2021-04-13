@@ -1,14 +1,11 @@
 'use strict';
 
-const { resolve, join } = require('path');
+const path = require('path');
 const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const ROOT_PATH = resolve(__dirname, '..');
-const PATHS = {
-  SRC: resolve(ROOT_PATH, 'src'),
-  DIST: resolve(ROOT_PATH, 'dist'),
-};
+const ROOT_PATH = path.resolve(__dirname, '..');
+const SRC_PATH = path.resolve(ROOT_PATH, 'src');
 
 const babelOpts = {
   presets: [
@@ -30,12 +27,14 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '_src': PATHS.SRC,
+      '_entries': path.resolve(SRC_PATH, 'entries'),
+      '_pages': path.resolve(SRC_PATH, 'pages'),
+      '_components': path.resolve(SRC_PATH, 'components'),
     }
   },
 
   entry: {
-    main: join(PATHS.SRC, 'entries', 'index.jsx'),
+    app: path.join(SRC_PATH, 'entries', 'index.jsx'),
   },
 
   module: {
@@ -44,13 +43,13 @@ module.exports = {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         options: babelOpts,
-        include: PATHS.SRC,
+        include: SRC_PATH,
         exclude: /node_modules/,
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-        include: PATHS.SRC,
+        include: SRC_PATH,
         exclude: /node_modules/,
       },
     ],
@@ -59,13 +58,13 @@ module.exports = {
   plugins: [
     new RefreshWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: join(PATHS.SRC, 'index.html'),
+      template: path.join(SRC_PATH, 'index.html'),
       filename: 'index.html',
     }),
   ],
 
   output: {
-    path: PATHS.DIST,
+    path: path.join(ROOT_PATH, 'dist'),
     filename: '[name].bundle.js',
   },
 };
