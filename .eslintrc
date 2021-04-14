@@ -1,0 +1,110 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "commonjs": true
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": { "extensions": [".js", ".jsx"] }
+	  }
+  },
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "rules": {
+    "camelcase": ["error", { "properties": "always" }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "comma-style": ["error", "last"],
+    "comma-dangle": ["error", "always-multiline"],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "valid-jsdoc": [
+      "warn", {
+        "requireReturn": false,
+        "preferType": {
+          "Boolean": "boolean",
+          "String": "string",
+          "Number": "number",
+          "object": "Object",
+          "array": "Array",
+          "function": "Function",
+          "element": "Element",
+          "any": "*"
+        }
+      }
+    ],
+    "block-scoped-var": "warn",
+    "curly": "error",
+    "eqeqeq": "warn",
+    "quotes": ["error", "single"],
+    "semi": "error",
+    "no-inline-comments": "warn",
+    "no-debugger": "error",
+    // 콘솔을 쓰면 에러가 나던 규칙 경고
+    "no-console": "warn",
+    "no-empty": "warn",
+    "no-spaced-func": "warn",
+    "no-array-constructor": "error",
+    "no-undefined": "warn",
+    "no-undef": "error",
+    "no-alert": "warn",
+    "no-loop-func": "error",
+    "no-extra-semi": "error",
+    "no-multi-spaces": "error",
+    "no-new": "error",
+    "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+    // 사용하지 않는 변수가 있을때 빌드에러가 나던 규칙 경고
+    "no-unused-vars": "warn",
+    "no-use-before-define": ["error", { "functions": false }],
+    "object-curly-spacing": ["warn", "always"],
+    "space-before-blocks": "error",
+    "semi-spacing": ["error", { "before": false, "after": true }],
+    "keyword-spacing": ["error", { "before": true, "after": true }],
+    "no-new-object": "error",
+    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+    "space-infix-ops": ["error"],
+    "space-before-function-paren": ["error", { "anonymous": "always", "named": "never" }],
+    "no-var": "error",
+    "no-const-assign": "error",
+    "object-shorthand": "error",
+    // 화살표 함수의 파라미터가 하나일때 괄호 생략
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+    "no-duplicate-imports": "error",
+    // 확장자로 js와 jsx 둘다 허용하도록 수정
+    "react/jsx-filename-extension": [1, { "extensions": ["js", "jsx"] }],
+    // export const 문을 쓸때 에러를 내는 규칙 해제
+    "import/prefer-default-export": ["off"],
+    // hooks의 의존성배열이 충분하지 않을때 강제로 의존성을 추가하는 규칙을 완화
+    "react-hooks/exhaustive-deps": ["warn"],
+    // props spreading을 허용하지 않는 규칙 해제
+    "react/jsx-props-no-spreading": ["warn"],
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+  }
+}

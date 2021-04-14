@@ -1,5 +1,3 @@
-'use strict';
-
 const path = require('path');
 const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,7 +8,7 @@ const SRC_PATH = path.resolve(ROOT_PATH, 'src');
 const babelOpts = {
   presets: [
     [
-      '@babel/preset-env', 
+      '@babel/preset-env',
       {
         targets: {
           browsers: ['> 1% in KR', 'last 2 chrome versions'],
@@ -27,10 +25,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '_entries': path.resolve(SRC_PATH, 'entries'),
-      '_pages': path.resolve(SRC_PATH, 'pages'),
-      '_components': path.resolve(SRC_PATH, 'components'),
-    }
+      _entries: path.resolve(SRC_PATH, 'entries'),
+      _pages: path.resolve(SRC_PATH, 'pages'),
+      _components: path.resolve(SRC_PATH, 'components'),
+    },
   },
 
   entry: {
