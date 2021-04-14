@@ -1,18 +1,21 @@
 # react-boilerplate
 
 > ### 실행
-``` 
+#### install
+```
 npm install
 ```
+#### development mode
 ```
-// 개발 환경
 npm run dev
-// 배포 환경
+```
+#### production mode
+```
 npm run prod
 ```
 
-> ### 기본 구성
-- webpack 5
-- babel 7
-- react 17
+> ### 환경 구성
+- webpack5
+- babel7
+- react17
 - eslint
