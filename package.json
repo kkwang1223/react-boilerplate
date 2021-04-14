@@ -1,7 +1,7 @@
 {
-  "name": "react-todo",
+  "name": "react-boilerplate",
   "version": "1.0.0",
-  "description": "react todo list",
+  "description": "my react boilerplate",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kkwang1223/react-todo.git"
+    "url": "git+https://github.com/kkwang1223/react-boilerplate.git"
   },
-  "author": "kkwang",
+  "author": "kkwang <rhkddn136@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kkwang1223/react-todo/issues"
+    "url": "https://github.com/kkwang1223/react-boilerplate/issues"
   },
-  "homepage": "https://github.com/kkwang1223/react-todo#readme",
+  "homepage": "https://github.com/kkwang1223/react-boilerplate#readme",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
